@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="page-section">
+        <div class="container">
+            <h1 class="text-center wow fadeInUp">Create an account</h1>
+
+            <form class="contact-form mt-5" method="post" action="register">
+                {% csrf_token %}
+                <div class="row mb-3">
+                    <div class="col-sm-6 py-2 wow fadeInLeft">
+                        <label for="fullName">Name</label>
+                        <input type="text" name="username" id="fullName" class="form-control" placeholder="Full name..">
+                    </div>
+                    <div class="col-sm-6 py-2 wow fadeInRight">
+                        <label for="emailAddress">Email</label>
+                        <input type="email" name="email" id="emailAddress" class="form-control" placeholder="Email address..">
+                    </div>
+                    <div class="col-sm-6 py-2 wow fadeInRight">
+                        <label for="emailAddress">first name</label>
+                        <input type="text" name="first_name" id="emailAddress" class="form-control" placeholder="first name">
+                    </div>
+                    <div class="col-sm-6 py-2 wow fadeInRight">
+                        <label for="emailAddress">last name</label>
+                        <input type="text" name="last_name" id="emailAddress" class="form-control" placeholder="last name">
+                    </div>
+                    <div class="col-sm-6 py-2 wow fadeInLeft">
+                        <label for="password1">password</label>
+                        <input type="password" name="password1" id="fullName" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="col-sm-6 py-2 wow fadeInRight">
+                        <label for="password2">Confirm Password</label>
+                        <input type="password" name="password2" id="emailAddress" class="form-control" placeholder="Retype Password">
+                    </div>
+                    {% for msg in messages %}
+                        <h5 style="color: red">{{ msg }}</h5>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="btn btn-primary wow zoomIn">Register</button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

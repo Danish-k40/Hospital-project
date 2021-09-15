@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>{{ news.heading }}</h1>
+    <P>{{ news.desc }}</P>
+    <img src="{{ news.image.url }}">
+
+
+{% endblock %}
